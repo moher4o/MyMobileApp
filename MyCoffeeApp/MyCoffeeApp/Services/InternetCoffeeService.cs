@@ -18,7 +18,7 @@ namespace MyCoffeeApp.Services
         //static string Baseurl = DeviceInfo.Platform == DevicePlatform.Android ?
         //                                    "http://10.0.2.2:5000" : "http://localhost:5000";
 
-        static string BaseUrl = "YOUR URL";
+        static string BaseUrl = "https://localhost:5001/api/work";
 
         static HttpClient client;
 
@@ -38,7 +38,7 @@ namespace MyCoffeeApp.Services
         }
 
         public static Task<IEnumerable<Coffee>> GetCoffee() =>
-            GetAsync<IEnumerable<Coffee>>("api/Coffee", "getcoffee");
+            GetAsync<IEnumerable<Coffee>>("https://localhost:5001/api/work", "getcoffee");
 
         static async Task<T> GetAsync<T>(string url, string key, int mins = 1, bool forceRefresh = false)
         {
